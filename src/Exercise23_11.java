@@ -108,13 +108,17 @@ public class Exercise23_11 {
 
         // BEGIN REVEL SUBMISSION
         public Object clone() {
-            // Write your code here for the body of clone(). Don't change any other code in the template
-            // Hint: Need to perform a deep copy. See Section 13.7 for reference
-            return new Object();
+            Heap<E> clone = new Heap<>();
+            clone.list.addAll(this.list);
+            return clone;
         }
 
         public boolean equals(Object o) {
-            // Write your code here for the body of equals(Object o). Don't change any other code in the template
+            for (int i = 0, n = this.list.size(); i < n; i++) {
+                if (((Heap<?>) o).list.get(i) != this.list.get(i)) {
+                    return false;
+                }
+            }
             return true;
         }
 // END REVEL SUBMISSION
